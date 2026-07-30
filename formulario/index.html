@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encontremos tu próxima casa — Amabilly Beatriz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #0E2E32;
+    --ink-soft: #3A5459;
+    --paper: #F6F2EA;
+    --paper-raised: #FFFFFF;
+    --brass: #A9825A;
+    --brass-deep: #8C6A47;
+    --sage: #7C8A73;
+    --line: rgba(14,46,50,0.14);
+    --text-muted: #6B7A78;
+    --radius: 3px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html,body{
+    margin:0;
+    padding:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .reveal{ animation: rise 0.7s ease-out both; }
+    @keyframes rise{
+      from{ opacity:0; transform: translateY(10px); }
+      to{ opacity:1; transform: translateY(0); }
+    }
+  }
+
+  .page{ max-width: 480px; margin: 0 auto; padding: 0 0 64px; }
+
+  /* ---------- language switcher ---------- */
+  .langbar{
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 16px;
+    background: rgba(246,242,234,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .lang-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 6px 13px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .lang-btn .flag{ font-size: 14px; line-height: 1; }
+
+  .lang-btn:hover{ border-color: var(--brass); color: var(--ink); }
+
+  .lang-btn.active{
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  /* ---------- header / skyline ---------- */
+  .hero{ padding: 36px 28px 28px; text-align: center; }
+
+  .skyline{ width: 100%; height: auto; margin-bottom: 22px; }
+
+  .eyebrow{
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+    margin: 0 0 14px;
+  }
+
+  h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(28px, 7vw, 36px);
+    line-height: 1.12;
+    letter-spacing: -0.01em;
+    margin: 0 0 14px;
+    color: var(--ink);
+  }
+
+  h1 em{ font-style: italic; font-weight: 500; color: var(--brass-deep); }
+
+  .sub{
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 340px;
+    margin: 0 auto 18px;
+  }
+
+  .signature{
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: var(--text-muted);
+    padding-top: 12px;
+    border-top: 1px solid var(--line);
+    margin-top: 4px;
+  }
+
+  .signature .mark{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+
+  /* ---------- form ---------- */
+  form{ padding: 6px 24px 0; }
+
+  fieldset{
+    border: none;
+    margin: 0 0 8px;
+    padding: 28px 0 8px;
+    border-top: 1px solid var(--line);
+  }
+
+  legend{
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brass-deep);
+    padding: 0 0 20px;
+  }
+
+  .field{ margin-bottom: 18px; }
+  .field:last-child{ margin-bottom: 0; }
+
+  label{
+    display: block;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 7px;
+  }
+
+  label .opt{ font-weight: 400; color: var(--text-muted); font-size: 12.5px; }
+
+  input[type="text"], input[type="email"], input[type="tel"], select, textarea{
+    width: 100%;
+    background: var(--paper-raised);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 13px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    appearance: none;
+    -webkit-appearance: none;
+    transition: border-color 0.15s ease;
+  }
+
+  input::placeholder, textarea::placeholder{ color: #A6ACA8; }
+
+  input:focus, select:focus, textarea:focus{
+    outline: none;
+    border-color: var(--brass);
+    box-shadow: 0 0 0 3px rgba(169,130,90,0.15);
+  }
+
+  select{
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1L6 6L11 1' stroke='%23A9825A' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+
+  select:disabled{ color: #A6ACA8; background-color: #FBFAF7; }
+  select option{ color: var(--ink); }
+
+  textarea{ resize: vertical; min-height: 84px; line-height: 1.5; }
+
+  .row2{ display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+  /* ---------- submit ---------- */
+  .submit-wrap{ padding: 32px 24px 0; }
+
+  button[type="submit"]{
+    width: 100%;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+
+  button[type="submit"]:hover{ background: var(--brass-deep); }
+  button[type="submit"]:active{ background: var(--brass); }
+
+  .fineprint{
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+
+  .error-msg{
+    display: none;
+    text-align: center;
+    font-size: 13px;
+    color: #B3543B;
+    margin-top: 12px;
+  }
+
+  .error-msg.active{ display: block; }
+
+  button[type="submit"]:disabled{
+    opacity: 0.6;
+    cursor: default;
+  }
+
+  /* ---------- confirmation ---------- */
+  .confirm{ display: none; padding: 64px 32px 40px; text-align: center; }
+  .confirm.active{ display: block; }
+  .page.submitted form, .page.submitted .hero{ display: none; }
+
+  .check{
+    width: 46px;
+    height: 46px;
+    margin: 0 auto 22px;
+    border-radius: 50%;
+    border: 1.5px solid var(--sage);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .confirm h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 26px;
+    margin: 0 0 12px;
+  }
+
+  .confirm p{
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .confirm .who{ color: var(--brass-deep); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<div class="langbar">
+  <button type="button" class="lang-btn active" data-lang="es" onclick="setLanguage('es')"><span class="flag">🇪🇸</span><span>ES</span></button>
+  <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')"><span class="flag">🇺🇸</span><span>EN</span></button>
+  <button type="button" class="lang-btn" data-lang="pt" onclick="setLanguage('pt')"><span class="flag">🇧🇷</span><span>PT</span></button>
+</div>
+
+<div class="page" id="page">
+
+  <div class="hero reveal">
+    <svg class="skyline" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <line x1="0" y1="70" x2="400" y2="70" stroke="#A9825A" stroke-width="1" opacity="0.35"/>
+      <g stroke="#A9825A" stroke-width="1.2" opacity="0.55" fill="none">
+        <rect x="40" y="34" width="14" height="36"/>
+        <rect x="60" y="20" width="10" height="50"/>
+        <rect x="76" y="42" width="16" height="28"/>
+        <rect x="160" y="12" width="12" height="58"/>
+        <rect x="176" y="30" width="18" height="40"/>
+        <rect x="198" y="24" width="10" height="46"/>
+        <rect x="260" y="38" width="14" height="32"/>
+        <rect x="278" y="16" width="11" height="54"/>
+        <rect x="294" y="46" width="16" height="24"/>
+      </g>
+      <circle cx="330" cy="30" r="9" stroke="#A9825A" stroke-width="1" opacity="0.4" fill="none"/>
+    </svg>
+
+    <p class="eyebrow" data-i18n="eyebrow">Miami-Dade · Compra & Renta</p>
+    <h1><span data-i18n="h1_1">Encontremos</span> <em data-i18n="h1_em">tu</em><br><span data-i18n="h1_2">próxima casa</span></h1>
+    <p class="sub" data-i18n="sub">Cuéntame qué buscas y te contacto personalmente — en español, inglés o portugués.</p>
+
+    <div class="signature">
+      <span class="mark">AB</span>
+      <span data-i18n="signature">Amabilly Beatriz, Realtor® en Miami-Dade</span>
+    </div>
+  </div>
+
+  <form id="leadForm" action="https://formspree.io/f/mlgqzvzd" method="POST">
+    <input type="hidden" name="_subject" value="Nuevo lead desde Instagram">
+
+    <fieldset>
+      <legend data-i18n="legend_sobre_ti">Sobre ti</legend>
+      <div class="field">
+        <label for="nombre" data-i18n="label_nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" data-i18n-placeholder="ph_nombre" placeholder="Tu nombre" required>
+      </div>
+      <div class="field">
+        <label for="email" data-i18n="label_email">Email</label>
+        <input type="email" id="email" name="email" data-i18n-placeholder="ph_email" placeholder="tucorreo@email.com" required>
+      </div>
+      <div class="field">
+        <label for="telefono" data-i18n="label_telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="(305) 000-0000" required>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend data-i18n="legend_que_buscas">Qué buscas</legend>
+
+      <div class="field">
+        <label for="operacion" data-i18n="label_operacion">¿Buscas comprar o rentar?</label>
+        <select id="operacion" name="operacion" required>
+          <option value="" disabled selected data-i18n="select_option_placeholder">Selecciona una opción</option>
+          <option value="comprar" data-i18n="op_comprar">Comprar</option>
+          <option value="rentar" data-i18n="op_rentar">Rentar</option>
+          <option value="explorando" data-i18n="op_explorando">Todavía explorando opciones</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="tipoPropiedad"><span data-i18n="label_tipoPropiedad">Tipo de propiedad</span> <span class="opt" data-i18n="opt_full">(opcional)</span></label>
+        <select id="tipoPropiedad" name="tipoPropiedad">
+          <option value="" disabled selected data-i18n="select_option_placeholder">Selecciona una opción</option>
+          <option value="casa" data-i18n="tp_casa">Casa unifamiliar</option>
+          <option value="condo" data-i18n="tp_condo">Condo o apartamento</option>
+          <option value="townhouse" data-i18n="tp_townhouse">Townhouse</option>
+          <option value="no-seguro" data-i18n="tp_no_seguro">No estoy seguro todavía</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="presupuesto" data-i18n="label_presupuesto">Presupuesto</label>
+        <select id="presupuesto" name="presupuesto" required disabled>
+          <option value="" selected data-i18n="presupuesto_locked">Primero selecciona comprar o rentar</option>
+        </select>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label for="habitaciones"><span data-i18n="label_habitaciones">Habitaciones</span> <span class="opt" data-i18n="opt_short">(opc.)</span></label>
+          <select id="habitaciones" name="habitaciones">
+            <option value="" disabled selected>—</option>
+            <option value="estudio" data-i18n="hab_estudio">Estudio</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5+">5+</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="banos"><span data-i18n="label_banos">Baños</span> <span class="opt" data-i18n="opt_short">(opc.)</span></label>
+          <select id="banos" name="banos">
+            <option value="" disabled selected>—</option>
+            <option value="1">1</option>
+            <option value="1.5">1.5</option>
+            <option value="2">2</option>
+            <option value="2.5">2.5</option>
+            <option value="3+">3+</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend data-i18n="legend_donde">Dónde</legend>
+
+      <div class="field">
+        <label for="zona" data-i18n="label_zona">Zona de interés</label>
+        <select id="zona" name="zona" required>
+          <option value="" disabled selected data-i18n="zona_placeholder">Selecciona una zona</option>
+          <option value="brickell">Brickell</option>
+          <option value="downtown">Downtown Miami</option>
+          <option value="wynwood-edgewater">Wynwood / Edgewater</option>
+          <option value="coral-gables">Coral Gables</option>
+          <option value="coconut-grove">Coconut Grove</option>
+          <option value="doral">Doral</option>
+          <option value="kendall">Kendall</option>
+          <option value="miami-beach">Miami Beach</option>
+          <option value="aventura">Aventura</option>
+          <option value="hialeah">Hialeah</option>
+          <option value="homestead">Homestead</option>
+          <option value="cutler-bay">Cutler Bay</option>
+          <option value="otra" data-i18n="zona_otra">Otra zona</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="detalleZona"><span data-i18n="label_detalleZona">Cuéntame más sobre la ubicación</span> <span class="opt" data-i18n="opt_full">(opcional)</span></label>
+        <textarea id="detalleZona" name="detalleZona" data-i18n-placeholder="ph_detalleZona" placeholder="Ej: cerca de mi trabajo en Brickell, buenas escuelas, cerca del metro..."></textarea>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend data-i18n="legend_cuando">Cuándo</legend>
+      <div class="field">
+        <label for="timeline"><span data-i18n="label_timeline">¿Cuándo planeas mudarte?</span> <span class="opt" data-i18n="opt_short">(opc.)</span></label>
+        <select id="timeline" name="timeline">
+          <option value="" disabled selected data-i18n="select_option_placeholder">Selecciona una opción</option>
+          <option value="asap" data-i18n="tl_asap">Lo antes posible</option>
+          <option value="1-3" data-i18n="tl_1_3">En 1 a 3 meses</option>
+          <option value="3-6" data-i18n="tl_3_6">En 3 a 6 meses</option>
+          <option value="explorando" data-i18n="tl_explorando">Solo estoy explorando</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="horaLlamada"><span data-i18n="label_horaLlamada">¿A qué hora te puedo llamar?</span> <span class="opt" data-i18n="opt_short">(opc.)</span></label>
+        <select id="horaLlamada" name="horaLlamada">
+          <option value="" disabled selected data-i18n="hora_placeholder">Selecciona un horario</option>
+          <option value="manana" data-i18n="hora_manana">Mañana (9am – 12pm)</option>
+          <option value="tarde" data-i18n="hora_tarde">Tarde (12pm – 4pm)</option>
+          <option value="tarde-noche" data-i18n="hora_tardenoche">Tarde-noche (4pm – 7pm)</option>
+          <option value="cualquiera" data-i18n="hora_cualquiera">Cualquier hora</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="comentario"><span data-i18n="label_comentario">Algo más que deba saber</span> <span class="opt" data-i18n="opt_full">(opcional)</span></label>
+        <textarea id="comentario" name="comentario" data-i18n-placeholder="ph_comentario" placeholder="Cualquier detalle extra que me ayude a ayudarte mejor"></textarea>
+      </div>
+    </fieldset>
+
+    <div class="submit-wrap">
+      <button type="submit" data-i18n="submit_btn">Recibir mi asesoría personalizada</button>
+      <p class="fineprint" data-i18n="fineprint">Sin compromiso · Te respondo en menos de 24 horas</p>
+      <p class="error-msg" id="errorMsg" data-i18n="error_msg">Hubo un problema al enviar. Intenta de nuevo.</p>
+    </div>
+
+  </form>
+
+  <div class="confirm" id="confirm">
+    <div class="check">
+      <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
+        <path d="M1 7L6.5 12.5L17 1" stroke="#7C8A73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h2><span class="who" id="confirmName">gracias</span></h2>
+    <p id="confirmText">Recibí tu información. Te voy a escribir muy pronto.</p>
+  </div>
+
+</div>
+
+<script>
+  var currentLang = 'es';
+  var currentOperacion = '';
+
+  var dict = {
+    es: {
+      eyebrow: "Miami-Dade · Compra & Renta",
+      h1_1: "Encontremos", h1_em: "tu", h1_2: "próxima casa",
+      sub: "Cuéntame qué buscas y te contacto personalmente — en español, inglés o portugués.",
+      signature: "Amabilly Beatriz, Realtor® en Miami-Dade",
+      legend_sobre_ti: "Sobre ti", legend_que_buscas: "Qué buscas", legend_donde: "Dónde", legend_cuando: "Cuándo",
+      label_nombre: "Nombre completo", label_email: "Email", label_telefono: "Teléfono",
+      label_operacion: "¿Buscas comprar o rentar?", label_tipoPropiedad: "Tipo de propiedad",
+      label_presupuesto: "Presupuesto", label_habitaciones: "Habitaciones", label_banos: "Baños",
+      label_zona: "Zona de interés", label_detalleZona: "Cuéntame más sobre la ubicación",
+      label_timeline: "¿Cuándo planeas mudarte?", label_comentario: "Algo más que deba saber",
+      label_horaLlamada: "¿A qué hora te puedo llamar?",
+      opt_full: "(opcional)", opt_short: "(opc.)",
+      ph_nombre: "Tu nombre", ph_email: "tucorreo@email.com",
+      ph_detalleZona: "Ej: cerca de mi trabajo en Brickell, buenas escuelas, cerca del metro...",
+      ph_comentario: "Cualquier detalle extra que me ayude a ayudarte mejor",
+      select_option_placeholder: "Selecciona una opción",
+      op_comprar: "Comprar", op_rentar: "Rentar", op_explorando: "Todavía explorando opciones",
+      tp_casa: "Casa unifamiliar", tp_condo: "Condo o apartamento", tp_townhouse: "Townhouse", tp_no_seguro: "No estoy seguro todavía",
+      presupuesto_locked: "Primero selecciona comprar o rentar", presupuesto_placeholder: "Selecciona un rango",
+      hab_estudio: "Estudio",
+      zona_placeholder: "Selecciona una zona", zona_otra: "Otra zona",
+      tl_asap: "Lo antes posible", tl_1_3: "En 1 a 3 meses", tl_3_6: "En 3 a 6 meses", tl_explorando: "Solo estoy explorando",
+      hora_placeholder: "Selecciona un horario",
+      hora_manana: "Mañana (9am – 12pm)", hora_tarde: "Tarde (12pm – 4pm)", hora_tardenoche: "Tarde-noche (4pm – 7pm)", hora_cualquiera: "Cualquier hora",
+      submit_btn: "Recibir mi asesoría personalizada",
+      fineprint: "Sin compromiso · Te respondo en menos de 24 horas",
+      error_msg: "Hubo un problema al enviar. Intenta de nuevo."
+    },
+    en: {
+      eyebrow: "Miami-Dade · Buy & Rent",
+      h1_1: "Let's find", h1_em: "your", h1_2: "next home",
+      sub: "Tell me what you're looking for and I'll reach out personally — in English, Spanish, or Portuguese.",
+      signature: "Amabilly Beatriz, Realtor® in Miami-Dade",
+      legend_sobre_ti: "About you", legend_que_buscas: "What you're looking for", legend_donde: "Where", legend_cuando: "When",
+      label_nombre: "Full name", label_email: "Email", label_telefono: "Phone",
+      label_operacion: "Are you buying or renting?", label_tipoPropiedad: "Property type",
+      label_presupuesto: "Budget", label_habitaciones: "Bedrooms", label_banos: "Bathrooms",
+      label_zona: "Area of interest", label_detalleZona: "Tell me more about the location",
+      label_timeline: "When are you planning to move?", label_comentario: "Anything else I should know",
+      label_horaLlamada: "What time can I call you?",
+      opt_full: "(optional)", opt_short: "(opt.)",
+      ph_nombre: "Your name", ph_email: "youremail@email.com",
+      ph_detalleZona: "E.g. close to my job in Brickell, good schools, near the metro...",
+      ph_comentario: "Any extra detail that helps me help you better",
+      select_option_placeholder: "Select an option",
+      op_comprar: "Buy", op_rentar: "Rent", op_explorando: "Still exploring options",
+      tp_casa: "Single-family house", tp_condo: "Condo or apartment", tp_townhouse: "Townhouse", tp_no_seguro: "Not sure yet",
+      presupuesto_locked: "First select buy or rent", presupuesto_placeholder: "Select a range",
+      hab_estudio: "Studio",
+      zona_placeholder: "Select an area", zona_otra: "Other area",
+      tl_asap: "As soon as possible", tl_1_3: "In 1 to 3 months", tl_3_6: "In 3 to 6 months", tl_explorando: "Just exploring",
+      hora_placeholder: "Select a time",
+      hora_manana: "Morning (9am – 12pm)", hora_tarde: "Afternoon (12pm – 4pm)", hora_tardenoche: "Evening (4pm – 7pm)", hora_cualquiera: "Anytime",
+      submit_btn: "Get my personalized consultation",
+      fineprint: "No obligation · I'll reply within 24 hours",
+      error_msg: "There was a problem sending. Please try again."
+    },
+    pt: {
+      eyebrow: "Miami-Dade · Compra & Aluguel",
+      h1_1: "Vamos encontrar", h1_em: "sua", h1_2: "próxima casa",
+      sub: "Me conte o que você procura e entro em contato pessoalmente — em português, espanhol ou inglês.",
+      signature: "Amabilly Beatriz, Realtor® em Miami-Dade",
+      legend_sobre_ti: "Sobre você", legend_que_buscas: "O que você procura", legend_donde: "Onde", legend_cuando: "Quando",
+      label_nombre: "Nome completo", label_email: "Email", label_telefono: "Telefone",
+      label_operacion: "Você quer comprar ou alugar?", label_tipoPropiedad: "Tipo de imóvel",
+      label_presupuesto: "Orçamento", label_habitaciones: "Quartos", label_banos: "Banheiros",
+      label_zona: "Área de interesse", label_detalleZona: "Conte-me mais sobre a localização",
+      label_timeline: "Quando você planeja se mudar?", label_comentario: "Algo mais que eu deva saber",
+      label_horaLlamada: "A que horas posso te ligar?",
+      opt_full: "(opcional)", opt_short: "(opc.)",
+      ph_nombre: "Seu nome", ph_email: "seuemail@email.com",
+      ph_detalleZona: "Ex: perto do meu trabalho em Brickell, boas escolas, perto do metrô...",
+      ph_comentario: "Qualquer detalhe extra que me ajude a te ajudar melhor",
+      select_option_placeholder: "Selecione uma opção",
+      op_comprar: "Comprar", op_rentar: "Alugar", op_explorando: "Ainda explorando opções",
+      tp_casa: "Casa unifamiliar", tp_condo: "Condomínio ou apartamento", tp_townhouse: "Townhouse", tp_no_seguro: "Ainda não sei",
+      presupuesto_locked: "Primeiro selecione comprar ou alugar", presupuesto_placeholder: "Selecione uma faixa",
+      hab_estudio: "Studio",
+      zona_placeholder: "Selecione uma área", zona_otra: "Outra área",
+      tl_asap: "O quanto antes", tl_1_3: "Em 1 a 3 meses", tl_3_6: "Em 3 a 6 meses", tl_explorando: "Só estou explorando",
+      hora_placeholder: "Selecione um horário",
+      hora_manana: "Manhã (9h – 12h)", hora_tarde: "Tarde (12h – 16h)", hora_tardenoche: "Final da tarde (16h – 19h)", hora_cualquiera: "Qualquer horário",
+      submit_btn: "Receber minha consultoria personalizada",
+      fineprint: "Sem compromisso · Respondo em até 24 horas",
+      error_msg: "Houve um problema ao enviar. Tente novamente."
+    }
+  };
+
+  var rangos = {
+    es: {
+      renta: [
+        {value:'menos-1500', label:'Menos de $1,500 / mes'},
+        {value:'1500-2000', label:'$1,500 – $2,000 / mes'},
+        {value:'2000-2500', label:'$2,000 – $2,500 / mes'},
+        {value:'2500-3500', label:'$2,500 – $3,500 / mes'},
+        {value:'mas-3500', label:'Más de $3,500 / mes'}
+      ],
+      compra: [
+        {value:'menos-300k', label:'Menos de $300,000'},
+        {value:'300-450k', label:'$300,000 – $450,000'},
+        {value:'450-600k', label:'$450,000 – $600,000'},
+        {value:'600-800k', label:'$600,000 – $800,000'},
+        {value:'mas-800k', label:'Más de $800,000'}
+      ]
+    },
+    en: {
+      renta: [
+        {value:'menos-1500', label:'Under $1,500 / month'},
+        {value:'1500-2000', label:'$1,500 – $2,000 / month'},
+        {value:'2000-2500', label:'$2,000 – $2,500 / month'},
+        {value:'2500-3500', label:'$2,500 – $3,500 / month'},
+        {value:'mas-3500', label:'Over $3,500 / month'}
+      ],
+      compra: [
+        {value:'menos-300k', label:'Under $300,000'},
+        {value:'300-450k', label:'$300,000 – $450,000'},
+        {value:'450-600k', label:'$450,000 – $600,000'},
+        {value:'600-800k', label:'$600,000 – $800,000'},
+        {value:'mas-800k', label:'Over $800,000'}
+      ]
+    },
+    pt: {
+      renta: [
+        {value:'menos-1500', label:'Menos de $1.500 / mês'},
+        {value:'1500-2000', label:'$1.500 – $2.000 / mês'},
+        {value:'2000-2500', label:'$2.000 – $2.500 / mês'},
+        {value:'2500-3500', label:'$2.500 – $3.500 / mês'},
+        {value:'mas-3500', label:'Mais de $3.500 / mês'}
+      ],
+      compra: [
+        {value:'menos-300k', label:'Menos de $300.000'},
+        {value:'300-450k', label:'$300.000 – $450.000'},
+        {value:'450-600k', label:'$450.000 – $600.000'},
+        {value:'600-800k', label:'$600.000 – $800.000'},
+        {value:'mas-800k', label:'Mais de $800.000'}
+      ]
+    }
+  };
+
+  var confirmT = {
+    es: { heading: function(n){ return "¡Listo, " + n + "!"; },
+          body: function(z){ return "Recibí tu información y te voy a escribir en menos de 24 horas para empezar tu búsqueda" + (z ? " en " + z : "") + "."; } },
+    en: { heading: function(n){ return "All set, " + n + "!"; },
+          body: function(z){ return "I received your information and I'll reach out within 24 hours to start your search" + (z ? " in " + z : "") + "."; } },
+    pt: { heading: function(n){ return "Pronto, " + n + "!"; },
+          body: function(z){ return "Recebi suas informações e vou te escrever em até 24 horas para começar sua busca" + (z ? " em " + z : "") + "."; } }
+  };
+
+  function applyStaticTranslations(){
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if (dict[currentLang][key] !== undefined) el.textContent = dict[currentLang][key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (dict[currentLang][key] !== undefined) el.setAttribute('placeholder', dict[currentLang][key]);
+    });
+  }
+
+  function renderPresupuesto(){
+    var select = document.getElementById('presupuesto');
+    var prevValue = select.value;
+    if (!currentOperacion){
+      select.disabled = true;
+      select.innerHTML = '<option value="" selected>' + dict[currentLang].presupuesto_locked + '</option>';
+      return;
+    }
+    select.disabled = false;
+    var key = currentOperacion === 'rentar' ? 'renta' : 'compra';
+    var opciones = rangos[currentLang][key];
+    var html = '<option value="" disabled ' + (!prevValue ? 'selected' : '') + '>' + dict[currentLang].presupuesto_placeholder + '</option>';
+    opciones.forEach(function(o){
+      html += '<option value="' + o.value + '" ' + (o.value === prevValue ? 'selected' : '') + '>' + o.label + '</option>';
+    });
+    select.innerHTML = html;
+  }
+
+  function setLanguage(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    applyStaticTranslations();
+    renderPresupuesto();
+  }
+
+  document.getElementById('operacion').addEventListener('change', function(){
+    currentOperacion = this.value;
+    renderPresupuesto();
+  });
+
+  var form = document.getElementById('leadForm');
+  var page = document.getElementById('page');
+  var confirmBox = document.getElementById('confirm');
+  var confirmName = document.getElementById('confirmName');
+  var confirmText = document.getElementById('confirmText');
+  var errorMsg = document.getElementById('errorMsg');
+  var submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorMsg.classList.remove('active');
+    submitBtn.disabled = true;
+
+    var nombre = document.getElementById('nombre').value.trim().split(' ')[0] || '';
+    var zonaSel = document.getElementById('zona');
+    var zonaTexto = zonaSel.selectedOptions[0] && zonaSel.value ? zonaSel.selectedOptions[0].text : '';
+    var data = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if (response.ok) {
+        confirmName.textContent = confirmT[currentLang].heading(nombre);
+        confirmText.textContent = confirmT[currentLang].body(zonaTexto);
+        page.classList.add('submitted');
+        confirmBox.classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        throw new Error('Formspree error');
+      }
+    }).catch(function(){
+      submitBtn.disabled = false;
+      errorMsg.classList.add('active');
+    });
+  });
+
+  setLanguage('es');
+</script>
+
+</body>
+</html>
