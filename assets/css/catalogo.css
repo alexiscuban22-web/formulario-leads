@@ -109,7 +109,17 @@ h1{
   font-size: 13px;
   font-weight: 600;
   color: var(--brass-deep);
-  padding: 16px 24px 0;
+  padding: 20px 24px 18px;
+  transition: color 0.15s ease;
+}
+
+.back-link:hover{ color: var(--ink); }
+
+.back-link .arrow{
+  display: inline-block;
+  font-size: 15px;
+  line-height: 1;
+  transform: translateY(-1px);
 }
 
 /* ---------- catalog grid ---------- */
