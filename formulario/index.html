@@ -7,6 +7,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site-footer.css">
+<script src="/assets/js/site.js"></script>
 <style>
   :root{
     --ink: #0E2E32;
@@ -309,8 +311,8 @@
 <body>
 
 <div class="langbar">
-  <button type="button" class="lang-btn active" data-lang="es" onclick="setLanguage('es')"><span class="flag">🇪🇸</span><span>ES</span></button>
   <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')"><span class="flag">🇺🇸</span><span>EN</span></button>
+  <button type="button" class="lang-btn active" data-lang="es" onclick="setLanguage('es')"><span class="flag">🇪🇸</span><span>ES</span></button>
   <button type="button" class="lang-btn" data-lang="pt" onclick="setLanguage('pt')"><span class="flag">🇧🇷</span><span>PT</span></button>
 </div>
 
@@ -482,6 +484,7 @@
     <div class="submit-wrap">
       <button type="submit" data-i18n="submit_btn">Recibir mi asesoría personalizada</button>
       <p class="fineprint" data-i18n="fineprint">Sin compromiso · Te respondo en menos de 24 horas</p>
+      <p class="fineprint" data-i18n="tcpa_consent">Al enviar este formulario, aceptas que Amabilly Beatriz te contacte por teléfono, texto o email.</p>
       <p class="error-msg" id="errorMsg" data-i18n="error_msg">Hubo un problema al enviar. Intenta de nuevo.</p>
     </div>
 
@@ -496,6 +499,8 @@
     <h2><span class="who" id="confirmName">gracias</span></h2>
     <p id="confirmText">Recibí tu información. Te voy a escribir muy pronto.</p>
   </div>
+
+  <footer class="site-footer" id="siteFooter"></footer>
 
 </div>
 
@@ -532,6 +537,7 @@
       hora_manana: "Mañana (9am – 12pm)", hora_tarde: "Tarde (12pm – 4pm)", hora_tardenoche: "Tarde-noche (4pm – 7pm)", hora_cualquiera: "Cualquier hora",
       submit_btn: "Recibir mi asesoría personalizada",
       fineprint: "Sin compromiso · Te respondo en menos de 24 horas",
+      tcpa_consent: "Al enviar este formulario, aceptas que Amabilly Beatriz te contacte por teléfono, texto o email.",
       error_msg: "Hubo un problema al enviar. Intenta de nuevo."
     },
     en: {
@@ -562,6 +568,7 @@
       hora_manana: "Morning (9am – 12pm)", hora_tarde: "Afternoon (12pm – 4pm)", hora_tardenoche: "Evening (4pm – 7pm)", hora_cualquiera: "Anytime",
       submit_btn: "Get my personalized consultation",
       fineprint: "No obligation · I'll reply within 24 hours",
+      tcpa_consent: "By submitting this form, you agree that Amabilly Beatriz may contact you by phone, text, or email.",
       error_msg: "There was a problem sending. Please try again."
     },
     pt: {
@@ -592,6 +599,7 @@
       hora_manana: "Manhã (9h – 12h)", hora_tarde: "Tarde (12h – 16h)", hora_tardenoche: "Final da tarde (16h – 19h)", hora_cualquiera: "Qualquer horário",
       submit_btn: "Receber minha consultoria personalizada",
       fineprint: "Sem compromisso · Respondo em até 24 horas",
+      tcpa_consent: "Ao enviar este formulário, você concorda que Amabilly Beatriz entre em contato por telefone, mensagem de texto ou email.",
       error_msg: "Houve um problema ao enviar. Tente novamente."
     }
   };
@@ -693,6 +701,8 @@
     });
     applyStaticTranslations();
     renderPresupuesto();
+    renderSiteFooter(lang);
+    saveLang(lang);
   }
 
   document.getElementById('operacion').addEventListener('change', function(){
@@ -738,7 +748,7 @@
     });
   });
 
-  setLanguage('es');
+  setLanguage(getSavedLang('es'));
 </script>
 
 </body>

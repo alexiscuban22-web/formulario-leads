@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Política de privacidad — Amabilly Beatriz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/catalogo.css">
+<link rel="stylesheet" href="/assets/css/site-footer.css">
+<script src="/assets/js/site.js"></script>
+<style>
+  .legal-body{ padding: 24px 24px 0; }
+  .legal-body p{ font-size: 14.5px; line-height: 1.65; color: var(--ink-soft); margin: 0 0 16px; }
+  .legal-body p:last-child{ margin-bottom: 0; }
+  .legal-updated{ font-size: 12.5px; color: var(--text-muted); padding: 20px 24px 0; }
+</style>
+</head>
+<body>
+
+<div class="langbar">
+  <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')"><span class="flag">🇺🇸</span><span>EN</span></button>
+  <button type="button" class="lang-btn active" data-lang="es" onclick="setLanguage('es')"><span class="flag">🇪🇸</span><span>ES</span></button>
+  <button type="button" class="lang-btn" data-lang="pt" onclick="setLanguage('pt')"><span class="flag">🇧🇷</span><span>PT</span></button>
+</div>
+
+<div class="page" id="page">
+
+  <a class="back-link" href="/"><span class="arrow">←</span><span data-i18n="back_link_home">Inicio</span></a>
+
+  <div class="hero reveal" style="padding-bottom:8px;">
+    <p class="eyebrow" data-i18n="eyebrow">Amabilly Beatriz, Realtor®</p>
+    <h1 data-i18n="h1">Política de privacidad</h1>
+  </div>
+
+  <div class="legal-body">
+    <p data-i18n="p1">La información que compartes en los formularios de este sitio (nombre, email y teléfono) se usa únicamente para darte seguimiento personal a tu consulta sobre compra o renta de propiedades.</p>
+    <p data-i18n="p2">No vendemos ni compartimos tus datos con terceros. Se usan exclusivamente para que Amabilly Beatriz pueda contactarte directamente sobre tu solicitud.</p>
+    <p data-i18n="p3">Si tienes preguntas sobre cómo se usa tu información, o quieres que la eliminemos de nuestros registros, puedes escribirle directamente a Amabilly.</p>
+  </div>
+
+  <p class="legal-updated" data-i18n="updated">Última actualización: julio de 2026.</p>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+</div>
+
+<script>
+  var currentLang = 'es';
+
+  var dict = {
+    es: {
+      back_link_home: "Inicio",
+      eyebrow: "Amabilly Beatriz, Realtor®",
+      h1: "Política de privacidad",
+      p1: "La información que compartes en los formularios de este sitio (nombre, email y teléfono) se usa únicamente para darte seguimiento personal a tu consulta sobre compra o renta de propiedades.",
+      p2: "No vendemos ni compartimos tus datos con terceros. Se usan exclusivamente para que Amabilly Beatriz pueda contactarte directamente sobre tu solicitud.",
+      p3: "Si tienes preguntas sobre cómo se usa tu información, o quieres que la eliminemos de nuestros registros, puedes escribirle directamente a Amabilly.",
+      updated: "Última actualización: julio de 2026."
+    },
+    en: {
+      back_link_home: "Home",
+      eyebrow: "Amabilly Beatriz, Realtor®",
+      h1: "Privacy Policy",
+      p1: "The information you share through the forms on this site (name, email, and phone) is used only to personally follow up on your inquiry about buying or renting a property.",
+      p2: "We do not sell or share your data with third parties. It is used exclusively so Amabilly Beatriz can reach out to you directly about your request.",
+      p3: "If you have questions about how your information is used, or would like it removed from our records, you can reach out to Amabilly directly.",
+      updated: "Last updated: July 2026."
+    },
+    pt: {
+      back_link_home: "Início",
+      eyebrow: "Amabilly Beatriz, Realtor®",
+      h1: "Política de privacidade",
+      p1: "As informações que você compartilha nos formulários deste site (nome, email e telefone) são usadas apenas para dar seguimento pessoal à sua consulta sobre compra ou aluguel de imóveis.",
+      p2: "Não vendemos nem compartilhamos seus dados com terceiros. Eles são usados exclusivamente para que Amabilly Beatriz entre em contato diretamente sobre sua solicitação.",
+      p3: "Se tiver dúvidas sobre como suas informações são usadas, ou quiser que sejam removidas dos nossos registros, pode falar diretamente com Amabilly.",
+      updated: "Última atualização: julho de 2026."
+    }
+  };
+
+  function applyStaticTranslations(){
+    var t = dict[currentLang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+  }
+
+  function setLanguage(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    applyStaticTranslations();
+    renderSiteFooter(lang);
+    saveLang(lang);
+  }
+
+  setLanguage(getSavedLang('es'));
+</script>
+
+</body>
+</html>
