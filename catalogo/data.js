@@ -127,59 +127,6 @@ var CATALOGO_UI = {
 
 var PROPERTIES = [
   {
-    slug: "pembroke-pines-15753-nw-10th",
-    operation: "venta",
-    price: 1000000,
-    beds: 3,
-    baths: 2,
-    sqft: 3229,
-    sqm: 300,
-    yearBuilt: 2010,
-    amenities: ["pool"],
-    address: "15753 NW 10th St, Pembroke Pines, FL 33028",
-    cityLine: "Towngate · Pembroke Pines, FL",
-    title: {
-      es: "Vive en el corazón de Towngate",
-      en: "Live in the heart of Towngate",
-      pt: "Viva no coração de Towngate"
-    },
-    description: {
-      es: "Una casa que respira tranquilidad familiar sin renunciar al confort moderno. Sus 3 habitaciones y 2 baños se distribuyen en 3,229 ft² (300 m²) construidos en 2010, con una piscina privada que se convierte en el centro de las tardes de verano. Espacios luminosos, cocina funcional y un diseño pensado para el día a día de una familia que busca su primer hogar propio en Miami-Dade.",
-      en: "A home built for everyday family life without giving up modern comfort. Its 3 bedrooms and 2 bathrooms are laid out across 3,229 sq ft (300 m²) built in 2010, with a private pool that becomes the heart of summer evenings. Bright, functional spaces designed for a family looking for their first home in Miami-Dade.",
-      pt: "Uma casa pensada para o dia a dia em família, sem abrir mão do conforto moderno. Seus 3 quartos e 2 banheiros ocupam 3.229 pés² (300 m²) construídos em 2010, com piscina privativa que vira o centro das tardes de verão. Espaços amplos e iluminados, cozinha funcional e um design feito para quem busca sua primeira casa própria em Miami-Dade."
-    },
-    neighborhood: {
-      es: "Ubicada en Towngate, una de las comunidades más consolidadas de Pembroke Pines, con calles arboladas y HOA bajo que cubre piscina comunitaria, clubhouse, canchas de tenis y parques. A pasos, el Towngate Shopping Center resuelve el mandado diario con su Publix; cruzando la I-75 te espera Pembroke Gardens, un mall al aire libre con Barnes & Noble, Banana Republic y Old Navy. Las escuelas de la zona — Silver Palms Elementary, Walter C. Young Middle y Charles W. Flanagan High — tienen buena reputación (B+), y el acceso directo a la I-75 hace que moverte por todo el sur de Broward sea cuestión de minutos.",
-      en: "Located in Towngate, one of Pembroke Pines' most established communities, with tree-lined streets and a low HOA that covers a community pool, clubhouse, tennis courts, and parks. Steps away, the Towngate Shopping Center handles daily errands with its Publix; across I-75, the Pembroke Gardens open-air mall awaits with Barnes & Noble, Banana Republic, and Old Navy. Local schools — Silver Palms Elementary, Walter C. Young Middle, and Charles W. Flanagan High — are well rated (B+), and direct I-75 access puts all of South Broward just minutes away.",
-      pt: "Localizada em Towngate, uma das comunidades mais consolidadas de Pembroke Pines, com ruas arborizadas e uma taxa de HOA baixa que cobre piscina comunitária, clubhouse, quadras de tênis e parques. A poucos passos, o Towngate Shopping Center resolve as compras do dia a dia com seu Publix; cruzando a I-75, o Pembroke Gardens, um shopping a céu aberto, traz lojas como Barnes & Noble, Banana Republic e Old Navy. As escolas da região — Silver Palms Elementary, Walter C. Young Middle e Charles W. Flanagan High — têm boa reputação (B+), e o acesso direto à I-75 coloca todo o sul de Broward a poucos minutos de distância."
-    },
-    images: {
-      cover: "/assets/casas/pembroke-pines-15753-nw-10th/exterior-thumb.jpg",
-      gallery: [
-        {
-          full: "/assets/casas/pembroke-pines-15753-nw-10th/exterior-full.jpg",
-          thumb: "/assets/casas/pembroke-pines-15753-nw-10th/exterior-thumb.jpg",
-          alt: { es: "Fachada de la propiedad", en: "Property exterior", pt: "Fachada do imóvel" }
-        },
-        {
-          full: "/assets/casas/pembroke-pines-15753-nw-10th/habitacion-full.jpg",
-          thumb: "/assets/casas/pembroke-pines-15753-nw-10th/habitacion-thumb.jpg",
-          alt: { es: "Habitación principal", en: "Primary bedroom", pt: "Quarto principal" }
-        },
-        {
-          full: "/assets/casas/pembroke-pines-15753-nw-10th/cocina-full.jpg",
-          thumb: "/assets/casas/pembroke-pines-15753-nw-10th/cocina-thumb.jpg",
-          alt: { es: "Cocina", en: "Kitchen", pt: "Cozinha" }
-        },
-        {
-          full: "/assets/casas/pembroke-pines-15753-nw-10th/bano-full.jpg",
-          thumb: "/assets/casas/pembroke-pines-15753-nw-10th/bano-thumb.jpg",
-          alt: { es: "Baño principal", en: "Primary bathroom", pt: "Banheiro principal" }
-        }
-      ]
-    }
-  },
-  {
     slug: "miami-117-nw-42nd-ave-602",
     operation: "renta",
     price: 2200,
