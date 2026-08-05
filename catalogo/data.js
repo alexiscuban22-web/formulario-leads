@@ -167,5 +167,43 @@ var PROPERTIES = [
         { full: "/assets/casas/miami-117-nw-42nd-ave-602/sauna-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/sauna-thumb.jpg", alt: { es: "Sauna del edificio", en: "Building sauna", pt: "Sauna do prédio" } }
       ]
     }
+  },
+  {
+    slug: "hialeah-628-w-17th-628",
+    operation: "renta",
+    price: 2499,
+    beds: 2,
+    baths: 1,
+    address: "628 W 17th St # 628, Hialeah, FL 33010",
+    cityLine: "Seminola City · Hialeah, FL",
+    title: {
+      es: "Dúplex encantador en Seminola City",
+      en: "Charming duplex in Seminola City",
+      pt: "Duplex encantador em Seminola City"
+    },
+    description: {
+      es: "Dúplex de 2 habitaciones y 1 baño, bien cuidado, en el corazón de Hialeah. Cocina moderna con encimeras de granito, aire acondicionado central, lavadora y secadora dentro de la unidad, y un patio privado ideal para disfrutar al aire libre. Incluye dos espacios de estacionamiento asignados. Contrato de 1 año, aprobación rápida (1 a 2 semanas) con ingresos verificables de al menos 2.5 veces la renta. Se aceptan perros y gatos. Disponible a partir del 1 de septiembre — la unidad está ocupada hasta el 31 de agosto, por lo que las visitas requieren 24 horas de aviso. Costo de mudanza: solo 2 meses de renta con crédito aprobado, sin cuota de aplicación.",
+      en: "Well-maintained 2-bedroom, 1-bathroom duplex in the heart of Hialeah. Modern kitchen with granite countertops, central A/C, in-unit washer & dryer, and a private patio perfect for outdoor enjoyment. Two assigned parking spaces included. 1-year lease, fast approval (1–2 weeks) with verifiable income of at least 2.5x the rent. Cat & dog friendly. Available starting September 1st — the unit is tenant-occupied until August 31st, so showings require 24 hours' notice. Move-in cost: just two months' rent with approved credit, no application fee.",
+      pt: "Duplex de 2 quartos e 1 banheiro, bem cuidado, no coração de Hialeah. Cozinha moderna com bancadas de granito, ar-condicionado central, lavadora e secadora na unidade, e um pátio privativo perfeito para aproveitar ao ar livre. Inclui duas vagas de estacionamento. Contrato de 1 ano, aprovação rápida (1 a 2 semanas) com renda comprovada de pelo menos 2,5 vezes o aluguel. Aceita cães e gatos. Disponível a partir de 1º de setembro — a unidade está ocupada até 31 de agosto, então as visitas exigem aviso de 24 horas. Custo de mudança: apenas dois meses de aluguel com crédito aprovado, sem taxa de inscrição."
+    },
+    neighborhood: {
+      es: "Está en Seminola City, uno de los barrios más caminables de Hialeah, a pocas cuadras del histórico Hialeah Park Racetrack & Casino. Cerca tienes el Westland Mall para todo tipo de compras, el Cotson Park para actividades al aire libre, y buen acceso a la Hialeah Expressway — todo a minutos de Miami.",
+      en: "Located in Seminola City, one of Hialeah's most walkable neighborhoods, just blocks from the historic Hialeah Park Racetrack & Casino. Westland Mall is nearby for shopping, Cotson Park offers outdoor space, and the Hialeah Expressway is close by — all just minutes from Miami.",
+      pt: "Fica em Seminola City, um dos bairros mais caminháveis de Hialeah, a poucos quarteirões do histórico Hialeah Park Racetrack & Casino. O Westland Mall fica por perto para compras, o Cotson Park oferece espaço ao ar livre, e há bom acesso à Hialeah Expressway — tudo a poucos minutos de Miami."
+    },
+    images: {
+      cover: "/assets/casas/hialeah-628-w-17th-628/exterior-thumb.jpg",
+      gallery: [
+        { full: "/assets/casas/hialeah-628-w-17th-628/exterior-full.jpg", thumb: "/assets/casas/hialeah-628-w-17th-628/exterior-thumb.jpg", alt: { es: "Fachada de la propiedad", en: "Property exterior", pt: "Fachada do imóvel" } },
+        { full: "/assets/casas/hialeah-628-w-17th-628/living-full.jpg", thumb: "/assets/casas/hialeah-628-w-17th-628/living-thumb.jpg", alt: { es: "Sala de estar", en: "Living room", pt: "Sala de estar" } },
+        { full: "/assets/casas/hialeah-628-w-17th-628/salon-full.jpg", thumb: "/assets/casas/hialeah-628-w-17th-628/salon-thumb.jpg", alt: { es: "Salón", en: "Family room", pt: "Salão" } },
+        { full: "/assets/casas/hialeah-628-w-17th-628/kitchen-1-full.jpg", thumb: "/assets/casas/hialeah-628-w-17th-628/kitchen-1-thumb.jpg", alt: { es: "Cocina", en: "Kitchen", pt: "Cozinha" } },
+        { full: "/assets/casas/hialeah-628-w-17th-628/kitchen-2-full.jpg", thumb: "/assets/casas/hialeah-628-w-17th-628/kitchen-2-thumb.jpg", alt: { es: "Cocina", en: "Kitchen", pt: "Cozinha" } },
+        { full: "/assets/casas/hialeah-628-w-17th-628/bedroom-full.jpg", thumb: "/assets/casas/hialeah-628-w-17th-628/bedroom-thumb.jpg", alt: { es: "Habitación", en: "Bedroom", pt: "Quarto" } },
+        { full: "/assets/casas/hialeah-628-w-17th-628/bathroom-full.jpg", thumb: "/assets/casas/hialeah-628-w-17th-628/bathroom-thumb.jpg", alt: { es: "Baño", en: "Bathroom", pt: "Banheiro" } },
+        { full: "/assets/casas/hialeah-628-w-17th-628/laundry-full.jpg", thumb: "/assets/casas/hialeah-628-w-17th-628/laundry-thumb.jpg", alt: { es: "Lavandería en la unidad", en: "In-unit laundry", pt: "Lavanderia na unidade" } },
+        { full: "/assets/casas/hialeah-628-w-17th-628/patio-full.jpg", thumb: "/assets/casas/hialeah-628-w-17th-628/patio-thumb.jpg", alt: { es: "Patio privado", en: "Private patio", pt: "Pátio privativo" } }
+      ]
+    }
   }
 ];
