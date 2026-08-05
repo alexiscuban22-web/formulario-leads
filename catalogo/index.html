@@ -56,7 +56,10 @@
 <script>
   var currentLang = 'es';
 
-  function fmtPrice(n){ return '$' + n.toLocaleString('en-US'); }
+  function fmtPrice(p, t){
+    var amount = '$' + p.price.toLocaleString('en-US');
+    return p.operation === 'renta' ? amount + t.price_per_month : amount;
+  }
 
   function renderGrid(){
     var grid = document.getElementById('grid');
@@ -68,6 +71,11 @@
     }
     document.getElementById('emptyState').style.display = 'none';
     grid.innerHTML = PROPERTIES.map(function(p){
+      var specs = [
+        '<span>' + p.beds + ' ' + t.spec_beds + '</span>',
+        '<span>' + p.baths + ' ' + t.spec_baths + '</span>'
+      ];
+      if (p.sqft) specs.push('<span>' + p.sqft.toLocaleString('en-US') + ' ' + t.spec_sqft + '</span>');
       return '' +
         '<a class="card reveal" href="/catalogo/' + p.slug + '/">' +
           '<div class="card-img-wrap">' +
@@ -75,13 +83,9 @@
             '<img src="' + p.images.cover + '" alt="' + p.title[currentLang] + '" loading="lazy">' +
           '</div>' +
           '<div class="card-body">' +
-            '<p class="card-price">' + fmtPrice(p.price) + '</p>' +
+            '<p class="card-price">' + fmtPrice(p, t) + '</p>' +
             '<p class="card-address">' + p.address + '</p>' +
-            '<div class="card-specs">' +
-              '<span>' + p.beds + ' ' + t.spec_beds + '</span>' +
-              '<span>' + p.baths + ' ' + t.spec_baths + '</span>' +
-              '<span>' + p.sqft.toLocaleString('en-US') + ' ' + t.spec_sqft + '</span>' +
-            '</div>' +
+            '<div class="card-specs">' + specs.join('') + '</div>' +
           '</div>' +
         '</a>';
     }).join('');

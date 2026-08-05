@@ -11,7 +11,10 @@ var CATALOGO_UI = {
     spec_baths: "baños",
     spec_sqft: "ft²",
     spec_year: "Año",
-    feature_pool: "Piscina",
+    price_per_month: "/mes",
+    amenity_pool: "Piscina",
+    amenity_gym: "Gimnasio",
+    amenity_sauna: "Sauna",
     cta_quiero: "La quiero",
     section_description: "Sobre esta casa",
     section_neighborhood: "La zona",
@@ -49,7 +52,10 @@ var CATALOGO_UI = {
     spec_baths: "bath",
     spec_sqft: "sq ft",
     spec_year: "Year",
-    feature_pool: "Pool",
+    price_per_month: "/mo",
+    amenity_pool: "Pool",
+    amenity_gym: "Gym",
+    amenity_sauna: "Sauna",
     cta_quiero: "I want it",
     section_description: "About this home",
     section_neighborhood: "The area",
@@ -87,7 +93,10 @@ var CATALOGO_UI = {
     spec_baths: "banheiros",
     spec_sqft: "ft²",
     spec_year: "Ano",
-    feature_pool: "Piscina",
+    price_per_month: "/mês",
+    amenity_pool: "Piscina",
+    amenity_gym: "Academia",
+    amenity_sauna: "Sauna",
     cta_quiero: "Eu quero",
     section_description: "Sobre esta casa",
     section_neighborhood: "A região",
@@ -126,7 +135,7 @@ var PROPERTIES = [
     sqft: 3229,
     sqm: 300,
     yearBuilt: 2010,
-    pool: true,
+    amenities: ["pool"],
     address: "15753 NW 10th St, Pembroke Pines, FL 33028",
     cityLine: "Towngate · Pembroke Pines, FL",
     title: {
@@ -167,6 +176,48 @@ var PROPERTIES = [
           thumb: "/assets/casas/pembroke-pines-15753-nw-10th/bano-thumb.jpg",
           alt: { es: "Baño principal", en: "Primary bathroom", pt: "Banheiro principal" }
         }
+      ]
+    }
+  },
+  {
+    slug: "miami-117-nw-42nd-ave-602",
+    operation: "renta",
+    price: 2200,
+    beds: 1,
+    baths: 1,
+    amenities: ["pool", "gym", "sauna"],
+    address: "117 NW 42nd Ave # 602, Miami, FL 33126",
+    cityLine: "Mediterranea · Flagami / Blue Lagoon, Miami, FL",
+    title: {
+      es: "Condo luminoso en el edificio Mediterranea",
+      en: "Bright condo in the Mediterranea building",
+      pt: "Apartamento claro no edifício Mediterranea"
+    },
+    description: {
+      es: "Condo de 1 habitación y 1 baño, luminoso y bien cuidado, en el corazón de Miami. Cocina moderna con encimeras de granito, electrodomésticos de acero inoxidable y barra desayunadora, piso de losa en toda la unidad y bañera de tamaño completo. Incluye lavadora y secadora dentro de la unidad, aire acondicionado central y un espacio de estacionamiento asignado. Disponible a partir del 1 de septiembre. Requiere aprobación de la asociación (proceso de 3 a 4 semanas) y cuota de aplicación de $150 por solicitante — no se permiten mascotas. Costo aproximado de mudanza: $6,750 (primer mes, último mes, depósito de seguridad y cuota de aplicación).",
+      en: "Bright and well-maintained 1-bedroom, 1-bathroom condo in the heart of Miami. Modern kitchen with granite countertops, stainless steel appliances, and a bar-height counter, tile flooring throughout, and a full-size tub. Includes in-unit washer & dryer, central A/C, and one assigned parking space. Available starting September 1st. Association approval required (3–4 week process) and a $150 application fee per applicant — no pets. Approximate move-in cost: $6,750 (first month, last month, security deposit, and application fee).",
+      pt: "Apartamento de 1 quarto e 1 banheiro, claro e bem cuidado, no coração de Miami. Cozinha moderna com bancadas de granito, eletrodomésticos em aço inoxidável e balcão tipo bar, piso de porcelanato em toda a unidade e banheira de tamanho completo. Inclui lavadora e secadora na unidade, ar-condicionado central e uma vaga de estacionamento. Disponível a partir de 1º de setembro. Requer aprovação da associação (processo de 3 a 4 semanas) e taxa de inscrição de $150 por candidato — não são permitidos animais de estimação. Custo aproximado de mudança: $6.750 (primeiro mês, último mês, depósito de segurança e taxa de inscrição)."
+    },
+    neighborhood: {
+      es: "El edificio Mediterranea está en Flagami, muy cerca de Blue Lagoon, a minutos del Aeropuerto Internacional de Miami y con acceso directo a las expressways Dolphin y Palmetto — ideal para moverte por toda la ciudad. Coral Gables queda a un corto trayecto, y en la misma zona tienes el parque acuático Grapeland, el campo de golf International Links Melreese y el Magic City Casino. El edificio suma piscina, gimnasio, sauna, clubhouse, lobby atendido y seguridad con acceso controlado.",
+      en: "The Mediterranea building sits in Flagami, right by Blue Lagoon, just minutes from Miami International Airport with direct access to the Dolphin and Palmetto Expressways — easy to get anywhere in the city. Coral Gables is a short drive away, and the area also has Grapeland Water Park, International Links Melreese golf course, and Magic City Casino. The building itself adds a pool, gym, sauna, clubhouse, attended lobby, and controlled access with security.",
+      pt: "O edifício Mediterranea fica em Flagami, bem perto de Blue Lagoon, a poucos minutos do Aeroporto Internacional de Miami e com acesso direto às rodovias Dolphin e Palmetto — fácil para se locomover pela cidade. Coral Gables fica a um curto trajeto, e a região também tem o parque aquático Grapeland, o campo de golfe International Links Melreese e o Magic City Casino. O próprio prédio conta com piscina, academia, sauna, salão de festas, portaria e acesso controlado com segurança."
+    },
+    images: {
+      cover: "/assets/casas/miami-117-nw-42nd-ave-602/exterior-thumb.jpg",
+      gallery: [
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/exterior-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/exterior-thumb.jpg", alt: { es: "Fachada del edificio Mediterranea", en: "Mediterranea building exterior", pt: "Fachada do edifício Mediterranea" } },
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/living-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/living-thumb.jpg", alt: { es: "Sala de estar", en: "Living room", pt: "Sala de estar" } },
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/kitchen-1-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/kitchen-1-thumb.jpg", alt: { es: "Cocina", en: "Kitchen", pt: "Cozinha" } },
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/kitchen-2-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/kitchen-2-thumb.jpg", alt: { es: "Cocina", en: "Kitchen", pt: "Cozinha" } },
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/kitchen-3-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/kitchen-3-thumb.jpg", alt: { es: "Cocina", en: "Kitchen", pt: "Cozinha" } },
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/bedroom-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/bedroom-thumb.jpg", alt: { es: "Habitación", en: "Bedroom", pt: "Quarto" } },
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/bathroom-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/bathroom-thumb.jpg", alt: { es: "Baño", en: "Bathroom", pt: "Banheiro" } },
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/laundry-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/laundry-thumb.jpg", alt: { es: "Lavandería en la unidad", en: "In-unit laundry", pt: "Lavanderia na unidade" } },
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/balcony-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/balcony-thumb.jpg", alt: { es: "Balcón", en: "Balcony", pt: "Varanda" } },
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/pool-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/pool-thumb.jpg", alt: { es: "Piscina del edificio", en: "Building pool", pt: "Piscina do prédio" } },
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/gym-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/gym-thumb.jpg", alt: { es: "Gimnasio del edificio", en: "Building gym", pt: "Academia do prédio" } },
+        { full: "/assets/casas/miami-117-nw-42nd-ave-602/sauna-full.jpg", thumb: "/assets/casas/miami-117-nw-42nd-ave-602/sauna-thumb.jpg", alt: { es: "Sauna del edificio", en: "Building sauna", pt: "Sauna do prédio" } }
       ]
     }
   }
