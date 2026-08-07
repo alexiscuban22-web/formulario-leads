@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>228 NW 39th St, Miami — Amabilly Beatriz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/catalogo.css">
+<link rel="stylesheet" href="/assets/css/site-footer.css">
+<script src="/assets/js/site.js"></script>
+<script src="/assets/js/lightbox.js" defer></script>
+</head>
+<body>
+
+<div class="langbar">
+  <button type="button" class="lang-btn" data-lang="en" onclick="setLanguage('en')"><span class="flag">🇺🇸</span><span>EN</span></button>
+  <button type="button" class="lang-btn active" data-lang="es" onclick="setLanguage('es')"><span class="flag">🇪🇸</span><span>ES</span></button>
+  <button type="button" class="lang-btn" data-lang="pt" onclick="setLanguage('pt')"><span class="flag">🇧🇷</span><span>PT</span></button>
+</div>
+
+<div class="page" id="page">
+
+  <a class="back-link" href="/catalogo/"><span class="arrow">←</span><span data-i18n="back_link">Volver al catálogo</span></a>
+
+  <div class="gallery reveal">
+    <div class="gallery-main">
+      <img id="mainImg" src="" alt="" onclick="openLightbox()">
+      <button type="button" class="gallery-expand-btn" onclick="openLightbox()" aria-label="Ver en pantalla completa">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M8 3H5a2 2 0 0 0-2 2v3"/>
+          <path d="M16 3h3a2 2 0 0 1 2 2v3"/>
+          <path d="M8 21H5a2 2 0 0 1-2-2v-3"/>
+          <path d="M16 21h3a2 2 0 0 0 2-2v-3"/>
+        </svg>
+      </button>
+    </div>
+    <div class="gallery-thumbs" id="thumbs"></div>
+  </div>
+
+  <div class="detail-head">
+    <p class="detail-price" id="price"></p>
+    <p class="detail-address" id="address"></p>
+    <p class="detail-city" id="cityLine"></p>
+
+    <div class="spec-row" id="specRow"></div>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow" data-i18n="section_description">Sobre esta casa</p>
+    <p id="description"></p>
+  </div>
+
+  <div class="section">
+    <p class="eyebrow" data-i18n="section_neighborhood">La zona</p>
+    <p id="neighborhood"></p>
+  </div>
+
+  <div class="cta-wrap">
+    <button type="button" class="btn-primary" id="ctaBtn" data-i18n="cta_quiero" onclick="openModal()">La quiero</button>
+  </div>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+</div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modal">
+    <button type="button" class="modal-close" onclick="closeModal()" aria-label="Cerrar">✕</button>
+
+    <form id="leadForm" action="https://formspree.io/f/mlgqzvzd" method="POST">
+      <input type="hidden" name="_subject" id="formSubject" value="">
+      <input type="hidden" name="propiedad" id="formPropiedad" value="">
+
+      <h2 data-i18n="modal_title">Pregunta por esta casa</h2>
+      <p class="sub" data-i18n="modal_sub">Déjame tus datos y te contacto personalmente para coordinar una visita.</p>
+
+      <div class="field">
+        <label for="nombre" data-i18n="label_nombre">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" data-i18n-placeholder="ph_nombre" placeholder="Tu nombre" required>
+      </div>
+      <div class="field">
+        <label for="email" data-i18n="label_email">Email</label>
+        <input type="email" id="email" name="email" data-i18n-placeholder="ph_email" placeholder="tucorreo@email.com" required>
+      </div>
+      <div class="field">
+        <label for="telefono" data-i18n="label_telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" placeholder="(305) 000-0000" required>
+      </div>
+      <div class="field">
+        <label for="horaLlamada"><span data-i18n="label_horaLlamada">¿A qué hora te puedo llamar?</span> <span class="opt" data-i18n="opt_short">(opc.)</span></label>
+        <select id="horaLlamada" name="horaLlamada">
+          <option value="" disabled selected data-i18n="hora_placeholder">Selecciona un horario</option>
+          <option value="manana" data-i18n="hora_manana">Mañana (9am – 12pm)</option>
+          <option value="tarde" data-i18n="hora_tarde">Tarde (12pm – 4pm)</option>
+          <option value="tarde-noche" data-i18n="hora_tardenoche">Tarde-noche (4pm – 7pm)</option>
+          <option value="cualquiera" data-i18n="hora_cualquiera">Cualquier hora</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-primary" data-i18n="submit_btn">Enviar</button>
+      <p class="fineprint" data-i18n="fineprint">Sin compromiso · Te respondo en menos de 24 horas</p>
+      <p class="fineprint" data-i18n="tcpa_consent">Al enviar este formulario, aceptas que Amabilly Beatriz te contacte por teléfono, texto o email.</p>
+      <p class="error-msg" id="errorMsg" data-i18n="error_msg">Hubo un problema al enviar. Intenta de nuevo.</p>
+    </form>
+
+    <div class="modal-confirm" id="modalConfirm">
+      <div class="check">
+        <svg width="18" height="14" viewBox="0 0 18 14" fill="none">
+          <path d="M1 7L6.5 12.5L17 1" stroke="#7C8A73" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 data-i18n="confirm_heading">¡Listo!</h2>
+      <p data-i18n="confirm_body">Recibí tu información. Te voy a escribir muy pronto sobre esta propiedad.</p>
+    </div>
+  </div>
+</div>
+
+<script src="/catalogo/data.js"></script>
+<script>
+  var currentLang = 'es';
+  var property = PROPERTIES.filter(function(p){ return p.slug === 'miami-228-nw-39th-st'; })[0];
+  var activeImgIndex = 0;
+
+  function fmtPrice(p, t){
+    var amount = '$' + p.price.toLocaleString('en-US');
+    return p.operation === 'renta' ? amount + t.price_per_month : amount;
+  }
+
+  function renderGallery(){
+    var main = document.getElementById('mainImg');
+    var img = property.images.gallery[activeImgIndex];
+    main.src = img.full;
+    main.alt = img.alt[currentLang];
+
+    document.getElementById('thumbs').innerHTML = property.images.gallery.map(function(g, i){
+      return '<img src="' + g.thumb + '" alt="' + g.alt[currentLang] + '" class="' + (i === activeImgIndex ? 'active' : '') + '" onclick="selectImage(' + i + ')">';
+    }).join('');
+  }
+
+  function selectImage(i){
+    activeImgIndex = i;
+    renderGallery();
+  }
+
+  function openLightbox(){
+    var imgs = property.images.gallery.map(function(g){
+      return { full: g.full, alt: g.alt[currentLang] };
+    });
+    Lightbox.open(imgs, activeImgIndex);
+  }
+
+  function renderDetail(){
+    var t = CATALOGO_UI[currentLang];
+
+    document.getElementById('price').textContent = fmtPrice(property, t);
+    document.getElementById('address').textContent = property.address;
+    document.getElementById('cityLine').textContent = property.cityLine;
+    document.getElementById('description').textContent = property.description[currentLang];
+    document.getElementById('neighborhood').textContent = property.neighborhood[currentLang];
+
+    var specs = [
+      property.beds + ' ' + t.spec_beds,
+      property.baths + ' ' + t.spec_baths
+    ];
+    if (property.sqft) specs.push(property.sqft.toLocaleString('en-US') + ' ' + t.spec_sqft);
+    if (property.yearBuilt) specs.push(t.spec_year + ' ' + property.yearBuilt);
+    (property.amenities || []).forEach(function(a){
+      if (t['amenity_' + a]) specs.push(t['amenity_' + a]);
+    });
+
+    document.getElementById('specRow').innerHTML = specs.map(function(s){
+      return '<span class="spec-chip">' + s + '</span>';
+    }).join('');
+
+    document.title = property.title[currentLang] + ' — Amabilly Beatriz';
+
+    document.getElementById('formSubject').value = (currentLang === 'en' ? 'New inquiry about: ' : currentLang === 'pt' ? 'Novo interesse em: ' : 'Nuevo interés en: ') + property.address;
+    document.getElementById('formPropiedad').value = property.address;
+
+    renderGallery();
+  }
+
+  function applyStaticTranslations(){
+    var t = CATALOGO_UI[currentLang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if (t[key] !== undefined) el.textContent = t[key];
+    });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (t[key] !== undefined) el.setAttribute('placeholder', t[key]);
+    });
+  }
+
+  function setLanguage(lang){
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    applyStaticTranslations();
+    renderDetail();
+    renderSiteFooter(lang);
+    saveLang(lang);
+  }
+
+  function openModal(){
+    document.getElementById('modalOverlay').classList.add('active');
+  }
+  function closeModal(){
+    document.getElementById('modalOverlay').classList.remove('active');
+  }
+  document.getElementById('modalOverlay').addEventListener('click', function(e){
+    if (e.target === this) closeModal();
+  });
+
+  var form = document.getElementById('leadForm');
+  var modal = document.getElementById('modal');
+  var modalConfirm = document.getElementById('modalConfirm');
+  var errorMsg = document.getElementById('errorMsg');
+  var submitBtn = form.querySelector('button[type="submit"]');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    errorMsg.classList.remove('active');
+    submitBtn.disabled = true;
+
+    var data = new FormData(form);
+    fetch(form.action, {
+      method: 'POST',
+      body: data,
+      headers: { 'Accept': 'application/json' }
+    }).then(function(response){
+      if (response.ok){
+        modal.classList.add('submitted');
+        modalConfirm.classList.add('active');
+      } else {
+        throw new Error('Formspree error');
+      }
+    }).catch(function(){
+      submitBtn.disabled = false;
+      errorMsg.classList.add('active');
+    });
+  });
+
+  setLanguage(getSavedLang('es'));
+</script>
+
+</body>
+</html>

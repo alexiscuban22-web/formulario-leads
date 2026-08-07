@@ -205,5 +205,81 @@ var PROPERTIES = [
         { full: "/assets/casas/hialeah-628-w-17th-628/patio-full.jpg", thumb: "/assets/casas/hialeah-628-w-17th-628/patio-thumb.jpg", alt: { es: "Patio privado", en: "Private patio", pt: "Pátio privativo" } }
       ]
     }
+  },
+  {
+    slug: "miami-355-ne-55th-ter-1",
+    operation: "renta",
+    price: 2550,
+    beds: 2,
+    baths: 2,
+    sqft: 712,
+    address: "355 NE 55th Ter # 1, Miami, FL 33137",
+    cityLine: "Upper Eastside / MiMo · Miami, FL",
+    title: {
+      es: "Apartamento remodelado en el Upper Eastside",
+      en: "Remodeled apartment in the Upper Eastside",
+      pt: "Apartamento reformado no Upper Eastside"
+    },
+    description: {
+      es: "Apartamento de 2 habitaciones y 2 baños, completamente remodelado y listo para mudarte, con acabados modernos en toda la unidad. Sin asociación — proceso de aprobación rápido y sencillo. Se aceptan mascotas (cuota no reembolsable de $300, aplican restricciones). Disponible ahora. Costo de mudanza: solo primer mes y depósito de seguridad (aproximadamente $5,100 en total), más cuota de aplicación de $50 por solicitante.",
+      en: "Fully remodeled 2-bedroom, 2-bathroom apartment, move-in ready with modern finishes throughout. No association — quick and easy approval process. Pet friendly ($300 nonrefundable pet fee, restrictions may apply). Available now. Move-in cost: just first month and security deposit (approximately $5,100 total), plus a $50 application fee per applicant.",
+      pt: "Apartamento de 2 quartos e 2 banheiros, totalmente reformado e pronto para morar, com acabamentos modernos em toda a unidade. Sem associação — processo de aprovação rápido e simples. Aceita animais de estimação (taxa não reembolsável de $300, restrições podem se aplicar). Disponível agora. Custo de mudança: apenas primeiro mês e depósito de segurança (aproximadamente $5.100 no total), mais taxa de inscrição de $50 por candidato."
+    },
+    neighborhood: {
+      es: "Está en el Upper Eastside, la zona conocida por su arquitectura MiMo (Miami Modern) a lo largo de Biscayne Boulevard, con galerías de arte, tiendas y restaurantes de barrio. A minutos del Design District, Wynwood, Miami Beach y Brickell — de las mejores ubicaciones para moverte por toda la ciudad sin depender de una sola zona.",
+      en: "Located in the Upper Eastside, known for its MiMo (Miami Modern) architecture along Biscayne Boulevard, with art galleries, boutique shops, and neighborhood restaurants. Minutes from the Design District, Wynwood, Miami Beach, and Brickell — one of the best-placed spots to get around the whole city without being tied to just one area.",
+      pt: "Fica no Upper Eastside, conhecido pela arquitetura MiMo (Miami Modern) ao longo da Biscayne Boulevard, com galerias de arte, lojas de bairro e restaurantes. A poucos minutos do Design District, Wynwood, Miami Beach e Brickell — uma das localizações mais estratégicas para circular pela cidade inteira sem depender de uma única região."
+    },
+    images: {
+      cover: "/assets/casas/miami-355-ne-55th-ter-1/exterior-thumb.jpg",
+      gallery: [
+        { full: "/assets/casas/miami-355-ne-55th-ter-1/exterior-full.jpg", thumb: "/assets/casas/miami-355-ne-55th-ter-1/exterior-thumb.jpg", alt: { es: "Fachada de la propiedad", en: "Property exterior", pt: "Fachada do imóvel" } },
+        { full: "/assets/casas/miami-355-ne-55th-ter-1/living-full.jpg", thumb: "/assets/casas/miami-355-ne-55th-ter-1/living-thumb.jpg", alt: { es: "Sala y cocina", en: "Living area and kitchen", pt: "Sala e cozinha" } },
+        { full: "/assets/casas/miami-355-ne-55th-ter-1/kitchen-full.jpg", thumb: "/assets/casas/miami-355-ne-55th-ter-1/kitchen-thumb.jpg", alt: { es: "Cocina", en: "Kitchen", pt: "Cozinha" } },
+        { full: "/assets/casas/miami-355-ne-55th-ter-1/bedroom-1-full.jpg", thumb: "/assets/casas/miami-355-ne-55th-ter-1/bedroom-1-thumb.jpg", alt: { es: "Habitación principal", en: "Primary bedroom", pt: "Quarto principal" } },
+        { full: "/assets/casas/miami-355-ne-55th-ter-1/bedroom-2-full.jpg", thumb: "/assets/casas/miami-355-ne-55th-ter-1/bedroom-2-thumb.jpg", alt: { es: "Segunda habitación", en: "Second bedroom", pt: "Segundo quarto" } },
+        { full: "/assets/casas/miami-355-ne-55th-ter-1/bathroom-1-full.jpg", thumb: "/assets/casas/miami-355-ne-55th-ter-1/bathroom-1-thumb.jpg", alt: { es: "Baño principal", en: "Primary bathroom", pt: "Banheiro principal" } },
+        { full: "/assets/casas/miami-355-ne-55th-ter-1/bathroom-2-full.jpg", thumb: "/assets/casas/miami-355-ne-55th-ter-1/bathroom-2-thumb.jpg", alt: { es: "Segundo baño", en: "Second bathroom", pt: "Segundo banheiro" } },
+        { full: "/assets/casas/miami-355-ne-55th-ter-1/yard-full.jpg", thumb: "/assets/casas/miami-355-ne-55th-ter-1/yard-thumb.jpg", alt: { es: "Patio y entrada", en: "Yard and entrance", pt: "Quintal e entrada" } }
+      ]
+    }
+  },
+  {
+    slug: "miami-228-nw-39th-st",
+    operation: "renta",
+    price: 3300,
+    beds: 3,
+    baths: 1,
+    yearBuilt: 1936,
+    address: "228 NW 39th St # 0, Miami, FL 33127",
+    cityLine: "Buena Vista · Miami, FL",
+    title: {
+      es: "Casa renovada a pasos del Design District",
+      en: "Renovated home steps from the Design District",
+      pt: "Casa reformada a poucos passos do Design District"
+    },
+    description: {
+      es: "Casa unifamiliar de 3 habitaciones y 1 baño, completamente renovada, con acabados modernos, espacios amplios y mucha luz natural. Incluye lavadora y secadora. Patio privado cercado y estacionamiento en driveway. Se aceptan mascotas (aplican restricciones), proceso de aprobación rápido. Disponible ahora. Costo de mudanza: primer mes, último mes y depósito de seguridad (aproximadamente $9,900 en total), más cuota de aplicación de $39 por solicitante.",
+      en: "Beautifully renovated 3-bedroom, 1-bathroom single-family home with modern finishes, spacious living areas, and plenty of natural light throughout. Washer and dryer included. Private, fenced yard with a patio and driveway parking. Pet friendly (restrictions may apply), fast approval process. Available now. Move-in cost: first month, last month, and security deposit (approximately $9,900 total), plus a $39 application fee per applicant.",
+      pt: "Casa unifamiliar de 3 quartos e 1 banheiro, lindamente reformada, com acabamentos modernos, espaços amplos e muita luz natural. Inclui lavadora e secadora. Quintal privativo cercado com pátio e estacionamento na entrada. Aceita animais de estimação (restrições podem se aplicar), processo de aprovação rápido. Disponível agora. Custo de mudança: primeiro mês, último mês e depósito de segurança (aproximadamente $9.900 no total), mais taxa de inscrição de $39 por candidato."
+    },
+    neighborhood: {
+      es: "Ubicada en Buena Vista, a pocas cuadras del Design District — el corazón del diseño y la moda de lujo en Miami, con showrooms, galerías y algunos de los restaurantes mejor calificados de la ciudad. Wynwood, Midtown, Edgewater y Brickell quedan a minutos, y el acceso a las principales autopistas hace fácil moverte hacia cualquier parte de Miami-Dade.",
+      en: "Located in Buena Vista, just blocks from the Design District — the heart of Miami's luxury design and fashion scene, with showrooms, galleries, and some of the city's top-rated restaurants. Wynwood, Midtown, Edgewater, and Brickell are minutes away, and easy access to major highways makes it simple to get anywhere in Miami-Dade.",
+      pt: "Localizada em Buena Vista, a poucos quarteirões do Design District — o coração do design de luxo e da moda em Miami, com showrooms, galerias e alguns dos restaurantes mais bem avaliados da cidade. Wynwood, Midtown, Edgewater e Brickell ficam a minutos, e o acesso fácil às principais rodovias facilita chegar a qualquer lugar em Miami-Dade."
+    },
+    images: {
+      cover: "/assets/casas/miami-228-nw-39th-st/exterior-thumb.jpg",
+      gallery: [
+        { full: "/assets/casas/miami-228-nw-39th-st/exterior-full.jpg", thumb: "/assets/casas/miami-228-nw-39th-st/exterior-thumb.jpg", alt: { es: "Fachada y jardín", en: "Exterior and yard", pt: "Fachada e jardim" } },
+        { full: "/assets/casas/miami-228-nw-39th-st/living-full.jpg", thumb: "/assets/casas/miami-228-nw-39th-st/living-thumb.jpg", alt: { es: "Sala de estar", en: "Living room", pt: "Sala de estar" } },
+        { full: "/assets/casas/miami-228-nw-39th-st/kitchen-full.jpg", thumb: "/assets/casas/miami-228-nw-39th-st/kitchen-thumb.jpg", alt: { es: "Cocina", en: "Kitchen", pt: "Cozinha" } },
+        { full: "/assets/casas/miami-228-nw-39th-st/bedroom-1-full.jpg", thumb: "/assets/casas/miami-228-nw-39th-st/bedroom-1-thumb.jpg", alt: { es: "Habitación", en: "Bedroom", pt: "Quarto" } },
+        { full: "/assets/casas/miami-228-nw-39th-st/bedroom-2-full.jpg", thumb: "/assets/casas/miami-228-nw-39th-st/bedroom-2-thumb.jpg", alt: { es: "Habitación con clóset", en: "Bedroom with closet", pt: "Quarto com closet" } },
+        { full: "/assets/casas/miami-228-nw-39th-st/bathroom-full.jpg", thumb: "/assets/casas/miami-228-nw-39th-st/bathroom-thumb.jpg", alt: { es: "Baño", en: "Bathroom", pt: "Banheiro" } },
+        { full: "/assets/casas/miami-228-nw-39th-st/laundry-full.jpg", thumb: "/assets/casas/miami-228-nw-39th-st/laundry-thumb.jpg", alt: { es: "Área de lavandería", en: "Laundry area", pt: "Área de lavanderia" } },
+        { full: "/assets/casas/miami-228-nw-39th-st/patio-full.jpg", thumb: "/assets/casas/miami-228-nw-39th-st/patio-thumb.jpg", alt: { es: "Patio lateral cercado", en: "Fenced side patio", pt: "Pátio lateral cercado" } }
+      ]
+    }
   }
 ];
